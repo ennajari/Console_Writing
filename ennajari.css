@@ -1,0 +1,76 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.console {
+  position: relative;
+  width: 90vw;
+  height: 60vh;
+  margin: 1em auto;
+  padding: 1em;
+  border-radius: 0.25em;
+  box-shadow: 0 0 2px 2px silver;
+  background-color: black;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.245), rgba(255, 255, 255, 0)), 
+                    linear-gradient(to bottom, black, black 2px, rgba(17, 17, 17, 0.95) 3px);
+  background-repeat: repeat-y;
+  background-position: center center;
+  background-size: cover, 100% 3px;
+}
+.console .cmd-text {
+  color: #1ff042;
+  display: block;
+  font-family: monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.225em;
+  letter-spacing: 0.15em;
+  text-shadow: 1px 1px 2px green, 1px 2px 4px limegreen, 1px 2px 4px green;
+  padding-bottom: 0.5em;
+}
+[contenteditable] {
+  outline: none;
+  caret-color: transparent !important;
+  caption-side: 
+}
+.console .cmd-line::before {
+  content: '>';
+  padding-right: 0.5em;
+  color: yellow;
+}
+.console .cmd-line::after {
+  position: absolute;
+  padding-left: -2.5em;
+  content: '';
+  display: inline-block;
+  vertical-align: -0.15em;
+  width: 0.75em;
+  height: 1em;
+  margin-left: 5px;
+  background: #1ff042;
+  opacity: 1;
+  box-shadow: 1px 1px 1px rgba(31, 240, 66, 0.65),
+             -1px -1px 1px rgba(31, 240, 66, 0.65),
+              1px -1px 1px rgba(255, 240, 66, 0.65),
+             -1px 1px 1px rgba(31, 240, 66, 0.65);
+  -webkit-animation: cursor-blink 1.15s infinite;
+  -moz-animation: cursor-blink 1.15s infinite;
+  animation: cursor-blink 1.15s infinite;
+}
+@keyframes cursor-blink {
+  from { opacity: 1; }
+  20%  { opacity: 1; }
+  30%  { opacity: 1; }
+  40%  { opacity: 0; }
+  60%  { opacity: 0; }
+  70%  { opacity: 1; }
+    to { opacity: 1; }
+}
